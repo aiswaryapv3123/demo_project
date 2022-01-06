@@ -34,6 +34,7 @@ class _GameCardState extends State<GameCard> {
       width: 100.w,
       // height: 40.h,
       decoration: BoxDecoration(
+          color: Gradients.colors[3],
           // color:Color(0xFF2B2D47),
         // color:Colors.red,
           boxShadow: [

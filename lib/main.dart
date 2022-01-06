@@ -1,9 +1,14 @@
 import 'package:demo_project/src/screens/home_page.dart';
 import 'package:demo_project/src/utiils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Gradients.colors[1],// status bar color
+    statusBarIconBrightness: Brightness.light
+  ));
   runApp(MyApp());
 }
 
@@ -16,7 +21,6 @@ class MyApp extends StatelessWidget {
         builder: (context, orientation, screenType) {
           return MaterialApp(
             title: 'Flutter Demo',
-
             theme: ThemeData(
                 scaffoldBackgroundColor: Gradients.colors[1],
                 shadowColor: Gradients.colors[2],
@@ -25,6 +29,7 @@ class MyApp extends StatelessWidget {
                   shadowColor: Gradients.colors[2].withOpacity(0.4),
                 )
             ),
+            debugShowCheckedModeBanner: false,
             home: HomePage(),
           );
         }

@@ -30,9 +30,8 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
           CarouselSlider(
             carouselController: carouselController,
             options: CarouselOptions(
-                // autoPlay: true,
-
-                ),
+              viewportFraction: 1,
+            ),
             items: widget.images!
                 .map(
                   (item) => Container(
@@ -41,9 +40,13 @@ class _CustomImageSliderState extends State<CustomImageSlider> {
                     // margin:EdgeInsets.symmetric(horizontal:5.w),
                     // padding:EdgeInsets.symmetric(horizontal:2.w),
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      // image: DecorationImage(
+                      //     fit: BoxFit.fill, image: AssetImage(item),),
+                    ),
+                    child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
-                            fit: BoxFit.fill, image: AssetImage(item))),
+                        child: Image.asset(item, fit: BoxFit.cover, width: 100.w)),
                   ),
                 )
                 .toList(),
